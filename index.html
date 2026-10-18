@@ -3,35 +3,130 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="flowers.png" type="image/x-icon">
-  <title>Un detalle para ti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16090e">
+  <meta name="description" content="Una sorpresa de cumpleaños hecha con cariño para Juana.">
+  <link rel="stylesheet" href="main.css">
+  <title>Para Juana, con amor</title>
 </head>
 
 <body>
-  <main class="welcome-card">
-    <span class="eyebrow">Un detalle hecho con cariño</span>
-    <div class="greetings" aria-label="Aries, mi amor">
-      <span>A</span><span>r</span><span>i</span><span>e</span><span>s</span><span>,</span>
-    </div>
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
 
-    <div class="description">
-      <strong>mi amor. ❤️🌻</strong>
-      <span>Preparé algo especial para recordarte cuánto significas para mí.</span>
+  <section class="welcome-screen" id="welcome" aria-labelledby="welcome-title">
+    <div class="welcome-screen__content">
+      <p class="eyebrow">Una sorpresa hecha para ti</p>
+      <button class="gift" id="open-gift" type="button" aria-label="Abrir el regalo para Juana">
+        <span class="gift__halo" aria-hidden="true"></span>
+        <span class="gift__box" aria-hidden="true"><span class="gift__ribbon"></span></span>
+        <span class="gift__lid" aria-hidden="true"><span class="gift__bow"></span></span>
+        <span class="gift__spark gift__spark--one" aria-hidden="true">✦</span>
+        <span class="gift__spark gift__spark--two" aria-hidden="true">✧</span>
+      </button>
+      <h1 id="welcome-title">Para Juana <span aria-hidden="true">❤️</span></h1>
+      <p class="welcome-screen__message">Hoy el mundo celebra tus 18 años, pero yo celebro la suerte de tenerte en mi
+        vida. Preparé algo especial para ti...</p>
+      <button class="button button--gold" id="open-gift-text" type="button">Abrir mi regalo <span
+          aria-hidden="true">♥</span></button>
+      <p class="welcome-screen__hint">Toca el regalo para descubrirlo</p>
     </div>
-
-    <div class="button">
-      <a class="botones" href="flower.html">Ver mi detalle <span aria-hidden="true">→</span></a>
+    <div class="petals" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
     </div>
+  </section>
 
-    <p class="distance-note">
-      Aunque no siempre podamos estar juntos, quiero que sepas que mi corazón siempre encuentra la manera de estar
-      contigo. ❤️
-    </p>
+  <main id="experience" class="experience" hidden>
+    <audio id="birthday-music" loop preload="metadata" aria-label="Canción para acompañar este regalo">
+      <source src="Infernal%20~%20Ten%20Miles%20Lyrics%20-%20never2saygoodbi.mp4" type="audio/mp4">
+    </audio>
+    <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Reproducir música">
+      <span aria-hidden="true">♫</span><span id="music-label">Reproducir música</span>
+    </button>
+
+    <section class="birthday-hero" aria-labelledby="birthday-title">
+      <p class="eyebrow">Un día para celebrar tu luz</p>
+      <p class="birthday-hero__number" aria-hidden="true">18</p>
+      <h2 id="birthday-title">Felices 18, <em>Juana</em></h2>
+      <p class="birthday-hero__text">Qué bonito que el mundo tenga un día para celebrar que existes.</p>
+      <a class="scroll-cue" href="#memories" aria-label="Continuar a tus fotografías"><span
+          aria-hidden="true">↓</span></a>
+    </section>
+
+    <section class="memories section-wrap" id="memories" aria-labelledby="memories-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Un poquito de ti</p>
+        <h2 id="memories-title">Dos recuerdos, infinitas razones para sonreír</h2>
+      </div>
+      <div class="photo-grid">
+        <button class="photo-card reveal" type="button" data-photo="fotos/foto1.jpeg"
+          data-alt="Retrato de Juana con una sonrisa dulce"
+          data-message="Hay algo en tu forma de sonreír que vuelve más bonito cualquier instante. Me encanta poder admirar la persona tan especial que eres.">
+          <span class="photo-card__image"><img src="fotos/foto1.jpeg" alt="Retrato de Juana con una sonrisa dulce"
+              loading="lazy"></span>
+          <span class="photo-card__caption"><span>Tu luz, siempre</span><span aria-hidden="true">↗</span></span>
+        </button>
+        <button class="photo-card reveal" type="button" data-photo="fotos/foto2.jpeg"
+          data-alt="Retrato de Juana con un gesto tierno"
+          data-message="Ojalá pudieras verte con mis ojos: llena de ternura, de belleza y de esa manera única de hacer que te quiera cada día un poquito más.">
+          <span class="photo-card__image"><img src="fotos/foto2.jpeg" alt="Retrato de Juana con un gesto tierno"
+              loading="lazy"></span>
+          <span class="photo-card__caption"><span>Mi sonrisa favorita</span><span aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="film-section" aria-labelledby="film-title">
+      <div class="film-section__inner reveal">
+        <p class="eyebrow">Un detalle más, solo para ti</p>
+        <h2 id="film-title">Hay algo más que quiero compartir contigo <span aria-hidden="true">🎬</span></h2>
+        <button class="button button--outline" id="show-video" type="button">Ver nuestro momento especial <span
+            aria-hidden="true">▶</span></button>
+        <div class="video-frame" id="video-frame" hidden>
+          <video id="special-video" controls playsinline preload="none" aria-label="Video especial para Juana">
+            <source src="fotos/video01.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video. Prueba con una versión reciente de Chrome, Firefox, Safari o
+            Edge.
+          </video>
+        </div>
+        <button class="video-close" id="hide-video" type="button" hidden>Cerrar video</button>
+      </div>
+    </section>
+
+    <section class="letter-section section-wrap" aria-labelledby="letter-title">
+      <div class="letter reveal">
+        <p class="eyebrow">De mi corazón al tuyo</p>
+        <h2 id="letter-title">Si pudiera regalarte algo más que este detalle...</h2>
+        <div class="letter__body">
+          <p>Mi Juana ❤️</p>
+          <p>Hoy cumples 18 años y quiero que este día te recuerde lo increíble que eres. No quería regalarte solamente
+            algo bonito; quería compartir contigo un pedacito de todo lo que siento por ti.</p>
+          <p>Deseo que esta nueva etapa esté llena de sonrisas, sueños que se acercan y momentos que te hagan feliz.</p>
+          <p>Gracias por ser tú, por la forma tan especial que tienes de iluminar mis días y por el lugar tan bonito que
+            ocupas en mi corazón.</p>
+          <p>Ojalá esta sorpresa consiga sacarte una sonrisa. Hoy, más que nada, deseo que te sientas muy querida.</p>
+          <p>Feliz cumpleaños, mi Juana. ❤️</p>
+          <p class="letter__signoff">Con todo mi cariño,<br>tu novio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale" aria-labelledby="finale-title">
+      <div class="finale__lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="eyebrow">Hoy y siempre, celebro que seas tú</p>
+      <h2 id="finale-title">JUANA</h2>
+      <p class="finale__birthday">Felices <span>18</span> años</p>
+      <p class="finale__message">Hoy celebramos tus 18 años, pero yo celebro cada sonrisa que haces nacer en mí. <span
+          aria-hidden="true">❤️</span></p>
+      <div class="petals petals--finale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
   </main>
 
+  <dialog class="lightbox" id="photo-dialog" aria-label="Fotografía y mensaje para Juana">
+    <button class="lightbox__close" id="close-photo" type="button" aria-label="Cerrar fotografía">×</button>
+    <img class="lightbox__image" id="lightbox-image" src="" alt="">
+    <p class="lightbox__message" id="lightbox-message"></p>
+  </dialog>
+  <script src="main.js" defer></script>
 </body>
 
 </html>
